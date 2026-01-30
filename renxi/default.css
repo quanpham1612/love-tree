@@ -1,15 +1,91 @@
-body{margin:0;padding:0;background:#ffe;font-size:14px;font-family:'微软雅黑','宋体',sans-serif;color:#231F20;overflow:auto}
+body{margin:0;padding:0;background:#ffe;font-size:14px;font-family:'微软雅黑','宋体',sans-serif;color:#231F20;overflow:hidden;box-sizing:border-box;position:relative;}
+*{box-sizing:border-box;}
 a {color:#000;font-size:14px;}
-#main{width:100%;}
-#wrap{position:relative;margin:0 auto;width:1100px;height:680px;margin-top:10px;}
-#text{width:400px;height:425px;left:60px;top:80px;position:absolute;}
+
+/* Falling petals/hearts from tree */
+@keyframes fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateX(60px) translateY(125px);
+  }
+  50% {
+    transform: translateX(-40px) translateY(250px);
+  }
+  75% {
+    transform: translateX(30px) translateY(375px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0) translateY(500px);
+  }
+}
+
+.petal {
+  position: fixed;
+  pointer-events: none;
+  font-size: 28px;
+  z-index: 1;
+  animation: fall 12s linear forwards;
+  line-height: 1;
+}
+
+#main{width:100%;display:flex;flex-direction:column;min-height:100vh;position:relative;z-index:2;overflow-y:auto;}
+#wrap{position:relative;margin:0 auto;width:1100px;display:flex;flex-direction:column;flex-grow:1;}
+#text{width:100%;order:2;padding:20px;text-align:center;}
 #code{display:none;font-size:16px;}
-#clock-box {position:absolute;left:60px;top:550px;font-size:28px;display:none;}
+#clock-box {order:3;font-size:28px;display:none;text-align:center;padding:20px;margin-bottom:auto;}
 #clock-box a {font-size:28px;text-decoration:none;}
-#clock{margin-left:48px;}
+#clock{margin:10px auto;}
 #clock .digit {font-size:64px;}
-#canvas{margin:0 auto;width:1100px;height:680px;}
+#canvas{order:1;margin:0 auto;width:1100px;height:680px;display:block;}
 #error{margin:0 auto;text-align:center;margin-top:60px;display:none;}
 .hand{cursor:pointer;}
 .say{margin-left:5px;}
 .space{margin-right:150px;}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  #wrap{width:90%;}
+  #canvas{width:100%;height:auto;max-width:100%;}
+  #text{width:100%;}
+  #clock-box{width:100%;}
+}
+
+@media (max-width: 768px) {
+  body{font-size:13px;}
+  a {font-size:13px;}
+  #wrap{width:95%;margin-left:auto;margin-right:auto;}
+  #text{width:100%;padding:12px;order:2;}
+  #code{font-size:13px;line-height:1.6;}
+  #clock-box {width:100%;font-size:20px;padding:15px;order:3;margin-bottom:auto;}
+  #clock-box a {font-size:20px;}
+  #clock{margin:10px auto;}
+  #clock .digit {font-size:48px;}
+  #canvas{width:100%;height:auto;aspect-ratio:1100/680;max-width:100%;order:1;}
+  .say{margin-left:0;font-size:13px;line-height:1.5;}
+  .space{margin-right:0;}
+  .petal {
+    font-size:24px;
+  }
+}
+
+@media (max-width: 480px) {
+  body{font-size:12px;}
+  a {font-size:12px;}
+  #wrap{width:96%;margin-left:2%;margin-right:2%;}
+  #text{width:100%;padding:10px;order:2;}
+  #code{font-size:12px;line-height:1.5;}
+  #clock-box {width:100%;font-size:16px;padding:10px;order:3;margin-bottom:auto;}
+  #clock-box a {font-size:16px;}
+  #clock{margin:8px auto;}
+  #clock .digit {font-size:36px;}
+  #canvas{width:100%;height:auto;aspect-ratio:1100/680;max-width:100%;order:1;}
+  .say{margin-left:0;font-size:12px;line-height:1.4;}
+  .space{margin-right:0;}
+  .petal {
+    font-size:20px;
+  }
+}

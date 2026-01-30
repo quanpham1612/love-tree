@@ -1,7 +1,8 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" type="image/png" href="image/favicon.ico">
-		<title>Quốc tế phụ nữ</title>    
+		<title>Love Story</title>    
         <link type="text/css" rel="stylesheet" href="./renxi/default.css">
 		<script type="text/javascript" src="./renxi/jquery.min.js"></script>
 		<script type="text/javascript" src="./renxi/jscex.min.js"></script>
@@ -15,6 +16,64 @@
 
 </head>
     <body>
+        <!-- Falling petals/hearts from tree -->
+        <script>
+            function createPetal() {
+                // Màu sắc của hoa từ cây
+                var colors = [
+                    'rgb(255, 105, 180)',  // Hot Pink
+                    'rgb(255, 20, 147)',   // Deep Pink
+                    'rgb(255, 192, 203)',  // Light Pink
+                    'rgb(255, 165, 0)',    // Orange
+                    'rgb(255, 215, 0)',    // Gold
+                    'rgb(255, 69, 0)'      // Red Orange
+                ];
+                
+                var petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.innerHTML = '❤';
+                
+                // Vị trí ban đầu từ vùng cây (giữa màn hình, vùng trên cao)
+                var treeX = window.innerWidth / 2 - 150 + Math.random() * 300;
+                var treeY = window.innerHeight / 3 - 50 + Math.random() * 100;
+                
+                petal.style.left = treeX + 'px';
+                petal.style.top = treeY + 'px';
+                
+                // Màu ngẫu nhiên
+                petal.style.color = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Thời gian rơi chậm (12-16 giây)
+                var duration = (12 + Math.random() * 4) + 's';
+                petal.style.animationDuration = duration;
+                petal.style.animationDelay = '0s';
+                
+                document.body.appendChild(petal);
+                
+                // Xóa element khi animation xong (rơi tới gốc cây)
+                setTimeout(function() {
+                    petal.remove();
+                }, parseInt(duration) * 1000);
+            }
+            
+            // Tạo một trái tim khi trang load
+            function startPetals() {
+                // Tạo lá ban đầu
+                createPetal();
+                
+                // Tạo lá mới mỗi 1.5 giây (nhiều hơn)
+                setInterval(createPetal, 1500);
+            }
+            
+            // Delay bắt đầu tạo lá đến sau khi cây hoàn thành animation (khoảng 4 giây)
+            setTimeout(function() {
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', startPetals);
+                } else {
+                    startPetals();
+                }
+            }, 4000);
+        </script>
  
 			<audio autoplay="autoplay" >
 					<source src="music/nhac.mp3" type="audio/mp3" />
@@ -23,22 +82,27 @@
           
 
         <div id="main">
-            <div id="error">Trình duyệt của bạn không được hỗ trợ. Để được hỗ trợ liên hệ daikupj@gmail.com. Hoặc sử dụng (<a href="http://www.google.cn/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)</div>
+            <div id="error">.sử dụng (<a href="http://www.google.cn/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)</div>
              <div id="wrap">
                 <div id="text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;">
 			        <div id="code">
-			      <font color="#0000FF" ><span class="say">Chào các bạn!</span><br>
+			      <font color="#0000FF" ><span class="say">Chào em yêu!</span><br>
 						<span class="say"> </span><br>
-						<span class="say">Ngày 8/3 chúc một nửa thế giới luôn thành công trong cuộc sống!</span><br>
-						<span class="say">Chúc bạn luôn duyên dáng và xinh đẹp trong mắt một nửa thế giới còn lại.</span><br>
-						<span class="say">Kính chúc "một nửa" của nhân loại vui vẻ, hạnh phúc bên người thân yêu</span><br>
-                        <span class="say"><span class="space"><img src="image/tym.png" alt=""><br>
-                        <span class="say"><span class="space"></span> --Lớp trưởng--</span>
+						<span class="say">Em là người con gái anh yêu nhất! </span><br>
+						<span class="say">Em xinh đẹp nhất!</span><br>
+						<span class="say">Em đáng yêu nhất!</span><br>
+                        <span class="say">Em cũng yêu anh nhất!</span><br>
+                        <span class="say">Em là một điều may mắn trong cuộc sống của anh...</span><br>
+                        <span class="say">..." Có em, anh sẽ chẳng cần điều gì khác ngoài em" </span><br>
+                        <span class="say">Yêu em cho đến khi nào anh không còn tồn tại ❤️</span><br>
+                        <span class="say">Hãy cứ tin em nhé! Ta sẽ có một chuyến đi thật dài và đích đến là hôn nhân'</span><br>
+
+                        <span class="say"><span class="space"></span> --Anh yêu em thật nhiều--</span>
 			  </font></p>
       </div>
                 </div>
                 <div id="clock-box">
-                    <span class="STYLE1"></span><font color="#FF0000">Ngày 8/3 cuối cùng ta ngồi với nhau đến nay đã....</font>
+                    <span class="STYLE1"></span><font color="#FF0000">Phạm Quân ❤️ An Hòa</font>
 <!-- <span class="STYLE1"> Time of love...</span> -->
                   <div id="clock"></div>
               </div>
@@ -53,15 +117,26 @@
     <script>
     (function(){
         var canvas = $('#canvas');
-		
+        
         if (!canvas[0].getContext) {
             $("#error").show();
             return false;        }
 
-        var width = canvas.width();
-        var height = canvas.height();        
+        var width = 1100;
+        var height = 680;
+        
+        // Set actual canvas resolution
         canvas.attr("width", width);
         canvas.attr("height", height);
+        
+        // Style for responsive display
+        canvas.css({
+            "width": "100%",
+            "height": "auto",
+            "max-width": "1100px",
+            "display": "block"
+        });
+        
         var opts = {
             seed: {
                 x: width / 2 - 20,
@@ -104,9 +179,11 @@
         var hold = 1;
 
         canvas.click(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
+            var rect = canvas[0].getBoundingClientRect();
+            var scale = canvas[0].width / rect.width;
+            
+            var x = (e.clientX - rect.left) * scale;
+            var y = (e.clientY - rect.top) * scale;
             if (seed.hover(x, y)) {
                 hold = 0; 
                 canvas.unbind("click");
@@ -114,9 +191,11 @@
                 canvas.removeClass('hand');
             }
         }).mousemove(function(e){
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
+            var rect = canvas[0].getBoundingClientRect();
+            var scale = canvas[0].width / rect.width;
+            
+            var x = (e.clientX - rect.left) * scale;
+            var y = (e.clientY - rect.top) * scale;
             canvas.toggleClass('hand', seed.hover(x, y));
         });
 
@@ -151,18 +230,29 @@
         }));
 
         var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
+            // Calculate responsive coordinates based on canvas width
+            var moveDistance = Math.floor(width * 0.45);  // 45% of width for movement
+            var snapshotX = Math.floor(width * 0.22);     // 22% from left
+            var snapshotWidth = Math.floor(width * 0.55); // 55% width for snapshot
+            
+            tree.snapshot("p1", snapshotX, 0, snapshotWidth, height);
+            while (tree.move("p1", moveDistance, 0)) {
                 foot.draw();
                 $await(Jscex.Async.sleep(10));
             }
             foot.draw();
-            tree.snapshot("p2", 500, 0, 610, 680);
+            tree.snapshot("p2", moveDistance, 0, snapshotWidth, height);
 
             canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
             canvas.css("background", "#ffe");
             $await(Jscex.Async.sleep(300));
+            
+            // Restore tree visibility instead of making background transparent
             canvas.css("background", "none");
+            // Redraw the tree at original position
+            tree.ctx.clearRect(0, 0, width, height);
+            tree.ctx.fillStyle = "rgba(0,0,0,0)";
+            tree.ctx.fillRect(0, 0, width, height);
         }));
 
         var jumpAnimate = eval(Jscex.compile("async", function () {
@@ -177,7 +267,7 @@
 
         var textAnimate = eval(Jscex.compile("async", function () {
 		    var together = new Date();
-		    together.setFullYear(2018,2 , 8); 			
+		    together.setFullYear(2026,0 , 4); 			
 		    together.setHours(0);							
 		    together.setMinutes(0);				
 		    together.setSeconds(0);					
@@ -197,18 +287,20 @@
             $await(seedAnimate());
             $await(growAnimate());
             $await(flowAnimate());
-            $await(moveAnimate());
+            // Skip move animation - keep tree at original position
+            // $await(moveAnimate());
 
             textAnimate().start();
 
-            $await(jumpAnimate());
+            // Don't run jump animation, keep tree visible
+            // $await(jumpAnimate());
         }));
 
         runAsync().start();
     })();
     </script>
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
-<p>Contact: <a href="https://www.facebook.com/dai.vudangdai" target="_blank">dangdaiptit</a></p>
+<p>Contact: <a href="https://www.facebook.com/quanpham115" target="_blank">By Quân Phạm</a></p>
 </div>
 </body>
 </html>
